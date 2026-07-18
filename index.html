@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İtalia Pizza</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+<body>
+
+    <div id="menuPopup">
+        <div class="menuBox">
+            <span id="kapat" onclick="closeMenu()">&times;</span>
+            <h2>Yemek Menüsü</h2>
+            <p> Margherita ------------------------------------------------------ 120.00$</p>
+            <p> Pepperoni ------------------------------------------------------- 140.00$</p>
+            <p> Veggie ------------------------------------------------------------ 110.00$</p>
+            <p> Italian Red Wine -------------------------------------------------- 7.00$</p>
+            <p> Limoncello Spritz ------------------------------------------------- 8.00$</p>
+            <p> San Pellegrino Sparkling Water ------------------------------ 3.00$</p>
+        </div>
+    </div>
+
+    <script>
+        function openMenu() 
+        {
+            document.getElementById("menuPopup").style.display = "flex";
+        }
+        function closeMenu() 
+        {
+            document.getElementById("menuPopup").style.display = "none";
+        }
+        function temizle() 
+        {
+            document.getElementById("form").reset();
+        }
+    </script>
+
+
+    <nav id="menu">
+        <div class="logo">
+            <img src="logom.png" alt="Logo" height="50px" width="50px">
+            <span class="logo-text"> İtalia Pizza</span>
+        </div>
+        <div class="links">
+            <a href="#">Anasayfa</a>
+            <a href="#orta2">Hakkımızda</a>
+            <a href="#orta3">İletişim</a>
+            <a href="#orta1">Menü</a>
+        </div>
+    </nav>
+
+    <div id="kapsayici">
+        <div id="ust1">
+            <div id="yazi">
+                <h1>Welcome to</h1>
+                <h2>İtalia pizza</h2>
+
+                <button id="btn1">Order Now</button><br>
+                <button id="btn2" onclick="openMenu()">Menu</button>
+            </div>
+       
+            <!-- <img src="images.jpg" alt="Pizza"> -->
+            <div class="slider">
+                <img src="pizza1.webp">
+                <img src="pizza2.webp">
+                <img src="pizza3.png">
+            </div>
+        </div>
+        <div id="orta1">
+            <h1 id="or1">Our Menu</h1>
+            <div class="menu-items">
+                <div>
+                    <img src="pizza1.webp" alt="Margherita Pizza" width="200px" height="150px">
+                    <h3>Margherita</h3>
+                    <p>Classic pizza with tomato sauce, mozzarella, and basil.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="pizza2.webp" alt="Pepperoni Pizza" width="200px" height="150px">
+                    <h3>Pepperoni</h3>
+                    <p>Spicy pepperoni with tomato sauce and mozzarella.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="pizza3.png" alt="Veggie Pizza" width="200px" height="150px">
+                    <h3>Veggie</h3>
+                    <p>Loaded with fresh vegetables and mozzarella cheese.</p>
+                </div>
+            </div>
+        </div>
+        <div id="orta2">
+            <h1 id="or2">Hakkımızda</h1>
+            <div class="menu-items2">
+                <div>
+                    <p>İtalia Pizza, lezzet dolu pizzalarıyla müşterilerine hizmet vermektedir. Bizim misyonumuz, her müşterinin memnun olduğu bir lezzet deneyimi sunmaktır.</p>
+                </div>
+            </div>
+             <div class="menu-items2">
+                <div>
+                    <p>İtalia Pizza, kuruluşu 1453 yılına dayanmaktadır. O zamandan beridir işimizi en iyi şekilde yapmak için elimizden geleni yapıyoruz. İstanbulun fethinde Fatih Sultan Mehmet'in emriyle kurulan bu lezzetli yemek evimiz, müşterilerimize en iyi hizmeti sunmak için her zaman hazır durur.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="orta3">
+            <div class="iletisim">
+                
+                <h1 id="or3">Contact Us</h1>
+                <h3>İletişim</h3>
+                <form type="reset" id="form">
+                    <input type="text" placeholder="Ad Soyad">
+                    <input type="email" placeholder="E-posta">
+                    <textarea placeholder="Mesaj"></textarea>
+                    <button type="submit" onclick="temizle()">Gönder</button>
+                </form>
+
+                
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 30px;">
+                <iframe
+                    src="https://www.google.com/maps?q=Istanbul&output=embed"
+                    width="800"
+                    height="450"
+                    style="border:0; border-radius: 15px;"
+                    loading="lazy">
+                </iframe>
+            </div>
+            <p>Telefon: +90 555 123 45 67</p>
+            <p>Email: italiapizza@gmail.com</p>
+            <p>Adres: İstiklal Caddesi No:123, Beyoğlu, İstanbul</p>
+            
+        </div>
+        <div id="yorumBolumu">
+
+            <h2>Yorumlar</h2>
+
+            <form id="yorumForm" onsubmit="yorumekle();">
+                <textarea id="yorumInput" placeholder="Yorum yaz..."></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+
+            <div id="yorumlar"></div>
+            <script>
+                function yorumekle()
+                {
+                    let yorumInput = document.getElementById("yorumInput");
+                    document.getElementById("yorumlar").innerHTML += "<div id='yorumlar'>" + "<p>" + yorumInput.value + "</p>" + "</div>";
+                    document.getElementById("yorumInput").value = "";
+                }
+            </script>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; 2026 İtalia Pizza. All rights reserved.</p>
+
+    </div>
+</body>
+</html>
